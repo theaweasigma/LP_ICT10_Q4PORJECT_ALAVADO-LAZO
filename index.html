@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade 10 Classmates System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 49%;
+            color: white;
+            cursor: pointer;
+        }
+
+        .add {
+            background-color: #2d6cdf;
+        }
+
+        .show {
+            background-color: #2e8b57;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="box">
+        <h2>📘 Grade 10 Classmates System</h2>
+        <p style="text-align:center;">Add and view your classmates easily</p>
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="section" placeholder="Section" required>
+            <input type="text" name="subject" placeholder="Favorite Subject" required>
+
+            <div class="btn-container">
+                <button class="btn add" type="submit">Add Classmate</button>
+                <button class="btn show" type="button" onclick="scrollToList()">Show List</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="box list" id="list">
+        <h3>📋 Classmate List</h3>
+
+        {% for c in classmates %}
+            <p>Hi! I am {{c.name}} from {{c.section}}. My favorite subject is {{c.subject}}.</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<script>
+function scrollToList() {
+    document.getElementById("list").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html> 
