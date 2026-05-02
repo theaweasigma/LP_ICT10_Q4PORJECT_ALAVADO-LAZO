@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Amethyst Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background: linear-gradient(135deg, #d8b4ff 0%, #f8c0e0 100%);
+            color: #1c1f2e;
+            min-height: 100vh;
+        }
+        header {
+            background: #800000;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #3f1f1f;
+            text-decoration: none;
+            background: #f4e4c4;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            background: #e5d5b4;
+        }
+        main {
+            max-width: 1150px;
+            margin: 2rem auto;
+            padding: 0 1rem 2rem;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            color: #4b5470;
+            font-size: 1rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 50px rgba(45, 106, 237, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 32px 64px rgba(45, 106, 237, 0.16);
+        }
+        .gallery-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+        .card-body {
+            padding: 1.25rem 1.5rem 1.75rem;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #161b33;
+        }
+        .card-caption {
+            color: #5c627d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        footer {
+            background: #800000;
+            color: white;
+            text-align: center;
+            padding: 1.25rem 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 720px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="top-nav">
+        <div class="logo">10-Ruby</div>
+        <nav class="nav-links">
+            <a href="photo.html">Classmates</a>
+            <a href="skillstest.html">Attendance Tracker</a>
+            <a href="photo.html">Gallery</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <h1>10-Ruby pictures</h1>
+        <p>best pictures of everyone</p>
+    </section>
+
+    <section id="gallery-grid" class="gallery-grid"></section>
+</main>
+
+<py-script src="photo.py"></py-script>
+
+<footer>
+    <p>© 2025-2026 10-Ruby. All rights reserved.</p>
+</footer>
+</body>
+</html>
